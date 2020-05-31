@@ -1,4 +1,4 @@
-import { Home, Posts, NotFound } from "../controllers";
+import { Home, Posts, NotFound, Spinner, Error, Users } from "../controllers";
 
 let content = document.getElementById("root");
 
@@ -10,10 +10,25 @@ const router = async (route) => {
       return content.appendChild(Home());
 
     case "#/posts":
-      return content.appendChild(await Posts());
+      try {
+        content.appendChild(Spinner());
+        const listPosts = await Posts();
+        content.innerHTML = "";
+        return content.appendChild(listPosts);
+      } catch (error) {
+        console.error(error);
+        return content.appendChild(Error());
+      }
 
-    //case "#/products":
-    // return console.log("products");
+    case "#/users":
+      try {
+        content.appendChild(Spinner());
+        const listUsers = await Users();
+        content.innerHTML = "";
+        return content.appendChild(listUsers);
+      } catch (error) {
+        return content.appendChild(Error());
+      }
 
     default:
       return content.appendChild(NotFound());

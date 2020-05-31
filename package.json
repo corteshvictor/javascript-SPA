@@ -10,7 +10,8 @@
   },
   "devDependencies": {
     "css-loader": "3.5.3",
-    "html-loader": "^1.1.0",
+    "file-loader": "6.0.0",
+    "html-loader": "1.1.0",
     "html-webpack-plugin": "4.3.0",
     "node-sass": "4.14.1",
     "sass-loader": "8.0.2",
@@ -20,9 +21,14 @@
     "webpack-dev-server": "3.11.0"
   },
   "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript"
+  ],
   "author": "",
   "license": "ISC"
 }

@@ -5,4 +5,9 @@ const getPosts = async () => {
   return await response.json();
 };
 
-export { getPosts };
+const getUSers = async () => {
+  const response = await fetch(`${API_URL}/users`);
+  return await response.json();
+};
+
+export { getPosts, getUSers };
