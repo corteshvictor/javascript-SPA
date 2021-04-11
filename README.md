@@ -1,2 +1,5 @@
 # javascript-SPA
- javascript Vanilla Single Page Application
+
+- javascript Vanilla Single Page Application
+- Sass
+- Webpack
